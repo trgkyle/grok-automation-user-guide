@@ -1,6 +1,6 @@
 [![Download Here](https://img.shields.io/badge/⬇_Download-Here-success?style=for-the-badge)](https://chromewebstore.google.com/detail/grok-automation-grokcom-a/kpeloeongamilgpjaibcdmldenfmdngp?authuser=2&hl=vi)
 
-# 🚀 Grok Automation v2.0.4 - Grok.com AI Automation [![Tiếng Việt](https://img.shields.io/badge/Tiếng%20Việt-green)](README_vi.md) [![中文](https://img.shields.io/badge/中文-red)](README_zh.md)
+# 🚀 Grok Automation v2.4.8 - Grok.com AI Automation [![Tiếng Việt](https://img.shields.io/badge/Tiếng%20Việt-green)](README_vi.md) [![中文](https://img.shields.io/badge/中文-red)](README_zh.md)
 
 **Grok Automation** is a powerful productivity tool designed to supercharge your creative workflow on xAI's grok.com. Stop manually entering prompts one by one—automate the process and generate high-quality content at scale.
 
@@ -9,6 +9,7 @@
 ## ✨ Key Features
 
 * **🚀 Advanced Batch Processing:** Queue dozens or hundreds of prompts and let the extension handle the submission and generation automatically.
+* **📊 Smart Spreadsheet Import:** Import prompts from `.txt` or spreadsheet files (`.xlsx`, `.csv`) with sheet/column selection and live preview.
 * **🎬 Text-to-Video Automation:** Generate stunning videos from text descriptions. Supports batch processing with custom delays.
 * **🖼️ Frame-to-Video:** Use a static image and add automatic motion effects to create dynamic videos.
 * **🧩 Ingredients to Video:** Animate multiple UI components or character images into a single video.
@@ -25,7 +26,7 @@
 * **📂 Organized File Management:** Automatically sorts downloads into project-specific folders to keep your workspace clean.
 * **🔧 Quick Fix:** One-click tool to recover from video or image generation errors.
 * **💳 Plan Management:** Sign in to check your plan and track daily prompt usage.
-* **🌐 Multi-language Support:** Available in English, Vietnamese, Chinese, Korean, Spanish, and Japanese.
+* **🌐 Multi-language Support:** Available in 20 languages (English, Vietnamese, Chinese, Korean, Spanish, Japanese, French, German, Portuguese, Arabic, Hindi, Indonesian, Italian, Dutch, Russian, Thai, Tagalog, Turkish, Urdu, and Bengali).
 
 -----
 
@@ -64,7 +65,9 @@
 
 1. Select **Text to Video** mode.
 2. Enter prompts into the input box (separate each prompt with a **blank line**).
-3. Alternatively, click the **Upload** icon to import a list of prompts from a `.txt` file.
+3. Alternatively, click the **Upload** icon to import prompts:
+   - **Text Files (`.txt`):** Loads prompts directly.
+   - **Spreadsheets (`.xlsx`, `.csv`):** Opens an import dialog. Select the worksheet tab and prompt column (the extension automatically recommends the best column). You can preview the first few rows and see the total count before importing.
 4. Click **Run** to start the batch.
 
 **Example Prompt:**
@@ -133,16 +136,15 @@ Access the **Setting** tab to customize your experience:
 | **Outputs per Prompt (Image)** | Set how many images (1–50) to generate per prompt. |
 | **Concurrent Prompts** | Number of prompts to process simultaneously (1–6). |
 | **Random Delay** | Random wait time before handling the next prompt. |
-| **Video Model** | Select the generation model (e.g., Grok 3.1 Fast/Quality, Grok 2). |
-| **Image Model** | Select the AI model for text-to-image generation. |
-| **Default Video Option** | Default duration: 6s, 10s (Super Grok), 6s extend, or 10s extend (Super Grok). |
-| **Default Image Mode Option** | Default input mode for image prompts: New Image or Edit Image. |
+| **Image Model** | Select the AI model: **Speed** or **Quality**. Note: Choosing "Quality" caps the maximum outputs per prompt at 4. |
+| **Default Video Option** | Default duration: **6 seconds**, **10 seconds**, **6 seconds (concat)**, or **10 seconds (concat)**. Concat chains prompts into a single video (the last prompt always uses non-concat option). |
+| **Default Image Mode Option** | Default input mode for image prompts: **New Image** or **Edit Image** (chains with previous prompt's output). |
 | **Image Processing Option** | For Frame-to-Video: start frame only, or start + end frame. |
 | **Max Input Images per Prompt** | For Ingredients to Video / Image to Image: 1–10 images. |
 | **Max Retries on Failure** | How many times to retry on failure (1–20). |
-| **Auto Download Quality (Video)** | No Download, 480p, 480p (Upscale), or 720p (Super Grok). |
+| **Auto Download Quality (Video)** | No Download, 480p, 480p (Upscale), or 720p. |
 | **Auto Download Quality (Image)** | No Download or 1k. |
-| **Language** | Switch between English, Tiếng Việt, 中文, 한국어, Español, 日本語. |
+| **Language** | Switch between 20 languages (English, Tiếng Việt, 中文, 한국어, Español, 日本語, Français, Deutsch, Português, العربية, हिंदी, Bahasa Indonesia, Italiano, Nederlands, Русский, ภาษาไทย, Filipino, Türkçe, اردو, বাংলা). |
 
 ---
 
@@ -153,7 +155,7 @@ Access the **Setting** tab to customize your experience:
 3. **Prompting:** Be specific! Detailed prompts lead to better AI generations. Separate multiple prompts with a clear blank line.
 4. **File Organization:** Use the **Save to Folder** field to keep project downloads in named subfolders.
 5. **Character Images:** Name your image files after characters (e.g., `hero.png`, `villain.jpg`) and enable **Auto-add character images** to have them matched automatically.
-6. **Video Duration:** Use *6s extend* or *10s extend* options to chain prompts into a single long video. The last prompt always uses a non-extend duration.
+6. **Video Duration:** Use *6 seconds (concat)* or *10 seconds (concat)* options to chain prompts into a single long video. The last prompt always uses a non-concat duration.
 7. **Quick Fix:** If a generation gets stuck or errors, use the **Fix Error** button in the Control tab.
 
 ---
@@ -189,7 +191,7 @@ Access the **Setting** tab to customize your experience:
 
 ## 📦 Version
 
-Current version: **2.0.4**
+Current version: **2.4.8**
 
 ---
 

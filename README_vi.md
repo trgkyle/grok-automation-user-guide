@@ -1,6 +1,6 @@
 [![Tải tại đây](https://img.shields.io/badge/⬇_Tải-Tại_Đây-success?style=for-the-badge)](https://chromewebstore.google.com/detail/grok-automation-grokcom-a/kpeloeongamilgpjaibcdmldenfmdngp?authuser=2&hl=vi)
 
-# 🚀 Grok Automation v2.0.4 - Tự động hóa Grok.com AI [![English](https://img.shields.io/badge/English-blue)](README.md) [![中文](https://img.shields.io/badge/中文-red)](README_zh.md)
+# 🚀 Grok Automation v2.4.8 - Tự động hóa Grok.com AI [![English](https://img.shields.io/badge/English-blue)](README.md) [![中文](https://img.shields.io/badge/中文-red)](README_zh.md)
 
 **Grok Automation** là một công cụ năng suất mạnh mẽ được thiết kế để tăng cường quy trình sáng tạo của bạn trên grok.com của xAI. Dừng việc nhập từng prompt một cách thủ công—hãy tự động hóa quy trình và tạo nội dung chất lượng cao ở quy mô lớn.
 
@@ -9,6 +9,7 @@
 ## ✨ Các tính năng chính
 
 * **🚀 Xử lý hàng loạt nâng cao:** Xếp hàng hàng chục hoặc hàng trăm prompt và để tiện ích tự động xử lý việc gửi và tạo nội dung.
+* **📊 Nhập bảng tính thông minh:** Nhập prompt từ file `.txt` hoặc tệp bảng tính (`.xlsx`, `.csv`) với tính năng chọn sheet/cột và xem trước trực quan.
 * **🎬 Tự động hóa Văn bản thành Video:** Tạo video tuyệt đẹp từ mô tả văn bản. Hỗ trợ xử lý hàng loạt với thời gian chờ tùy chỉnh.
 * **🖼️ Khung hình thành Video:** Sử dụng hình ảnh tĩnh và thêm các hiệu ứng chuyển động tự động để tạo video động.
 * **🧩 Thành phần thành Video:** Tạo hoạt ảnh từ nhiều thành phần giao diện hoặc ảnh nhân vật thành video.
@@ -25,7 +26,7 @@
 * **📂 Quản lý tệp ngăn nắp:** Tự động sắp xếp các bản tải xuống vào các thư mục riêng theo dự án để giữ cho không gian làm việc của bạn sạch sẽ.
 * **🔧 Sửa lỗi nhanh:** Công cụ một chạm để khắc phục lỗi tạo video hoặc hình ảnh.
 * **💳 Quản lý gói:** Đăng nhập để kiểm tra gói của bạn và theo dõi lượng prompt sử dụng hàng ngày.
-* **🌐 Hỗ trợ đa ngôn ngữ:** Có sẵn tiếng Anh, tiếng Việt, tiếng Trung, tiếng Hàn, tiếng Tây Ban Nha và tiếng Nhật.
+* **🌐 Hỗ trợ đa ngôn ngữ:** Hỗ trợ 20 ngôn ngữ (Tiếng Anh, Tiếng Việt, Tiếng Trung, Tiếng Hàn, Tiếng Tây Ban Nha, Tiếng Nhật, Tiếng Pháp, Tiếng Đức, Tiếng Bồ Đào Nha, Tiếng Ả Rập, Tiếng Hindi, Tiếng Indonesia, Tiếng Ý, Tiếng Hà Lan, Tiếng Nga, Tiếng Thái, Tiếng Tagalog (Filipino), Tiếng Thổ Nhĩ Kỳ, Tiếng Urdu và Tiếng Bengali).
 
 -----
 
@@ -64,7 +65,9 @@
 
 1. Chọn chế độ **Văn bản thành Video**.
 2. Nhập các prompt vào ô nhập liệu (tách mỗi prompt bằng một **dòng trống**).
-3. Hoặc nhấn vào biểu tượng **Tải lên** để nhập danh sách prompt từ file `.txt`.
+3. Hoặc nhấn vào biểu tượng **Tải lên** để nhập prompt:
+   - **Tệp văn bản (`.txt`):** Tải trực tiếp danh sách prompt.
+   - **Bảng tính (`.xlsx`, `.csv`):** Mở một hộp thoại nhập liệu. Chọn tab bảng tính và cột prompt (tiện ích tự động gợi ý cột chứa nhiều dữ liệu nhất). Bạn có thể xem trước 6 hàng đầu và thấy tổng số hàng trước khi nhập.
 4. Nhấn **Chạy** để bắt đầu xử lý hàng loạt.
 
 **Ví dụ Prompt:**
@@ -133,16 +136,15 @@ Truy cập tab **Cài đặt** để tùy chỉnh trải nghiệm của bạn:
 | **Số ảnh đầu ra mỗi Prompt** | Thiết lập số lượng hình ảnh (1–50) tạo ra cho mỗi prompt. |
 | **Prompt đồng thời** | Số lượng prompt xử lý cùng một lúc (1–6). |
 | **Độ trễ ngẫu nhiên** | Thời gian chờ ngẫu nhiên trước khi xử lý prompt tiếp theo. |
-| **Mô hình Video** | Chọn mô hình tạo (vd: Grok 3.1 Fast/Quality, Grok 2). |
-| **Mô hình Hình ảnh** | Chọn mô hình AI để tạo hình ảnh từ văn bản. |
-| **Tùy chọn Video mặc định** | Thời lượng mặc định: 6 giây, 10 giây (Super Grok), 6 giây mở rộng, hoặc 10 giây mở rộng (Super Grok). |
-| **Tùy chọn Chế độ Hình ảnh mặc định** | Chế độ đầu vào mặc định cho prompt hình ảnh: Ảnh mới hoặc Chỉnh sửa ảnh. |
-| **Tùy chọn xử lý ảnh** | Dành cho Khung hình thành Video: chỉ khung đầu, hoặc khung đầu + khung cuối. |
+| **Mô hình Hình ảnh** | Chọn mô hình AI: **Tốc độ** hoặc **Chất lượng**. Lưu ý: Chọn "Chất lượng" sẽ giới hạn số lượng ảnh đầu ra tối đa mỗi prompt là 4. |
+| **Tùy chọn Video mặc định** | Thời lượng mặc định: **6 giây**, **10 giây**, **6 giây (nối tiếp)** hoặc **10 giây (nối tiếp)**. Tùy chọn nối tiếp giúp ghép nối các prompt thành một video dài (prompt cuối luôn sử dụng tùy chọn không nối tiếp). |
+| **Tùy chọn Chế độ Hình ảnh mặc định** | Chế độ đầu vào mặc định cho các prompt hình ảnh: **Ảnh mới** hoặc **Chỉnh sửa ảnh** (sử dụng đầu ra từ prompt trước). |
+| **Tùy chọn xử lý ảnh** | Dành cho Khung hình thành Video: chỉ dùng khung hình đầu, hoặc dùng cả khung hình đầu và cuối. |
 | **Số ảnh đầu vào tối đa mỗi Prompt** | Cho Thành phần thành Video / Hình ảnh thành Hình ảnh: 1–10 ảnh. |
 | **Số lần thử lại tối đa khi lỗi** | Số lần thử lại nếu thất bại (1–20). |
-| **Chất lượng tự động tải xuống (Video)** | Không tải, 480p, 480p (Nâng chất lượng), hoặc 720p (Super Grok). |
-| **Chất lượng tự động tải xuống (Hình ảnh)** | Không tải hoặc 1k. |
-| **Ngôn ngữ** | Chuyển đổi giữa English, Tiếng Việt, 中文, 한국어, Español, 日本語. |
+| **Chất lượng tự động tải xuống (Video)** | Không tải xuống, 480p, 480p (Nâng chất lượng), hoặc 720p. |
+| **Chất lượng tự động tải xuống (Hình ảnh)** | Không tải xuống hoặc 1k. |
+| **Ngôn ngữ** | Chuyển đổi giữa 20 ngôn ngữ (English, Tiếng Việt, 中文, 한국어, Español, 日本語, Français, Deutsch, Português, العربية, हिंदी, Bahasa Indonesia, Italiano, Nederlands, Русский, ภาษาไทย, Filipino, Türkçe, اردو, বাংলা). |
 
 ---
 
@@ -153,7 +155,7 @@ Truy cập tab **Cài đặt** để tùy chỉnh trải nghiệm của bạn:
 3. **Viết Prompt:** Hãy cụ thể! Prompt chi tiết sẽ dẫn đến kết quả AI tốt hơn. Tách nhiều prompt bằng một dòng trống rõ ràng.
 4. **Quản lý tệp:** Dùng trường **Lưu vào thư mục** để giữ các tải xuống theo dự án trong thư mục con có tên.
 5. **Ảnh nhân vật:** Đặt tên tệp ảnh theo tên nhân vật (vd: `hero.png`, `villain.jpg`) và bật **Tự động thêm ảnh nhân vật** để chúng được ghép tự động.
-6. **Thời lượng video:** Dùng tùy chọn *6 giây mở rộng* hoặc *10 giây mở rộng* để ghép các prompt thành một video dài. Prompt cuối luôn dùng thời lượng không mở rộng.
+6. **Thời lượng video:** Dùng tùy chọn *6 giây (nối tiếp)* hoặc *10 giây (nối tiếp)* để ghép các prompt thành một video dài. Prompt cuối luôn dùng thời lượng không nối tiếp.
 7. **Sửa lỗi nhanh:** Nếu quá trình tạo bị kẹt hoặc lỗi, hãy nhấn **Sửa lỗi** trong tab Điều khiển.
 
 ---
@@ -174,7 +176,7 @@ Truy cập tab **Cài đặt** để tùy chỉnh trải nghiệm của bạn:
 
 * **Xử lý tại chỗ:** Tất cả logic tự động hóa chạy cục bộ trong trình duyệt của bạn.
 * **Không thu thập dữ liệu:** Chúng tôi không lưu trữ hoặc thu thập các prompt, hình ảnh hoặc dữ liệu tài khoản của bạn.
-* **Lưu trữ an toàn:** Các cài đặt được lưu trong bộ nhớ cục bộ của trình duyệt và đồng bộ trên tất cả các tab.
+* **Lưu trữ an sau:** Các cài đặt được lưu trong bộ nhớ cục bộ của trình duyệt và đồng bộ trên tất cả các tab.
 
 ---
 
@@ -189,7 +191,7 @@ Truy cập tab **Cài đặt** để tùy chỉnh trải nghiệm của bạn:
 
 ## 📦 Phiên bản
 
-Phiên bản hiện tại: **2.0.4**
+Phiên bản hiện tại: **2.4.8**
 
 ---
 
