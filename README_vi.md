@@ -9,6 +9,7 @@
 ## ✨ Các tính năng chính
 
 * **🚀 Xử lý hàng loạt nâng cao:** Xếp hàng hàng chục hoặc hàng trăm prompt và để tiện ích tự động xử lý việc gửi và tạo nội dung.
+* **🧩 Workflow (giao diện kéo thả trực quan):** Nối prompt, ảnh và các bước tạo trên một bảng vẽ — ví dụ tạo ảnh rồi tự động dùng chính ảnh đó để tạo video. Lưu nhiều workflow, chạy từng node hoặc chạy tất cả, nhập/xuất workflow thành file.
 * **📊 Nhập bảng tính thông minh:** Nhập prompt từ file `.txt` hoặc tệp bảng tính (`.xlsx`, `.csv`) với tính năng chọn sheet/cột và xem trước trực quan.
 * **🎬 Tự động hóa Văn bản thành Video:** Tạo video tuyệt đẹp từ mô tả văn bản. Hỗ trợ xử lý hàng loạt với thời gian chờ tùy chỉnh.
 * **🖼️ Khung hình thành Video:** Sử dụng hình ảnh tĩnh và thêm các hiệu ứng chuyển động tự động để tạo video động.
@@ -122,6 +123,87 @@ Camera zoom chậm vào những con cá koi đang bơi bên dưới.
 5. Trong **Cài đặt**, đặt **Số ảnh đầu vào tối đa mỗi Prompt** (1–10).
 6. Nhấn **Chạy**.
 
+### 🧩 Workflow (Giao diện kéo thả trực quan)
+
+Workflow là giao diện kéo thả trực quan cho các quy trình nhiều bước — ví dụ: tạo vài ảnh, dùng chính các ảnh đó để tạo video, rồi nối tiếp mỗi video bằng một prompt khác. Workflow mở trong cửa sổ riêng và chạy trên tab grok.com bạn đang mở.
+
+#### Mở Workflow
+
+* Nhấn **Workflow** trong tab Điều khiển (hàng nút dưới cùng).
+* Đã nhập prompt hoặc tải ảnh ở side panel? Rê chuột vào **Workflow** rồi nhấn **Chuyển sang workflow**: prompt, chế độ của từng prompt và ảnh sẽ thành các node trong workflow, sẵn sàng để chạy.
+
+#### Màn hình
+
+| Khu vực | Gồm những gì |
+| :--- | :--- |
+| **Bên trái** | **Node** (bấm hoặc kéo vào bảng vẽ) và **Workflow của bạn** (danh sách workflow đã lưu) |
+| **Thanh trên cùng** | Công cụ bảng vẽ: Hoàn tác/Làm lại, **Tự sắp xếp**, vừa khung nhìn, **Ví dụ**, xoá. Bên phải: nút **Chi tiết**, **Phím tắt** và trạng thái tab grok.com |
+| **Bảng vẽ** | Các node của bạn. Góc trên trái: **Chạy tất cả** (và **Dừng** khi đang chạy) và **Bật chạy nền** |
+
+Nút **Chi tiết** cho biết điều cần chú ý: **Vấn đề (n)** màu đỏ/vàng khi có gì chặn việc chạy, **Đang chạy 3/8** khi đang tạo. Bấm vào để mở bảng gồm các vấn đề (bấm một vấn đề để nhảy tới node), tiến độ, kế hoạch chạy và cài đặt đang dùng.
+
+#### Các loại node
+
+| Node | Chức năng |
+| :--- | :--- |
+| **Nhập prompt** | Một hoặc nhiều prompt, tách nhau bằng **dòng trống** |
+| **Tải ảnh lên** | Ảnh của bạn (thả file vào node). Rê chuột vào ảnh: 🔍 để xem lớn, ✕ để xoá, nút kéo ở góc để đổi thứ tự. Thứ tự (hoặc menu sắp xếp) quyết định prompt nào nhận ảnh nào |
+| **Tạo ảnh** | Văn bản thành Hình ảnh, hoặc Hình ảnh thành Hình ảnh khi có ảnh nối vào. Tuỳ chọn: **Chế độ ảnh theo prompt**, **Số ảnh đầu vào tối đa mỗi Prompt**, **Tự động thêm ảnh nhân vật** |
+| **Tạo video** | Văn bản thành Video, hoặc khi có ảnh nối vào: **Khung hình thành Video** / **Thành phần thành Video**. Tuỳ chọn: **Chế độ video theo prompt**, số ảnh mỗi prompt (dùng chung cài đặt với side panel), **Tự động thêm ảnh nhân vật** (Thành phần thành Video) |
+
+Node Tạo ảnh / Tạo video tự đặt tên theo prompt đầu tiên (`image_…` / `video_…`). Mỗi dòng prompt hiển thị các ảnh mà prompt đó sẽ nhận, để bạn kiểm tra trước khi chạy. Khung xem trước theo **tỉ lệ khung hình** trong cài đặt (node 9:16 hẹp và cao hơn).
+
+**Khung hình thành Video** có thể chỉ dùng khung hình đầu, hoặc **khung hình đầu và khung hình cuối** (dùng chung cài đặt với side panel). Với khung đầu và khung cuối, mỗi prompt lấy 2 ảnh theo thứ tự (prompt nối tiếp video trước lấy 1 ảnh); nếu không đủ ảnh, node hiện cảnh báo và không chạy được.
+
+#### Nối các node
+
+Kéo từ chấm tròn bên phải của một node và **thả vào bất kỳ chỗ nào trên node kia** — cổng phù hợp sẽ được chọn tự động. Trong lúc kéo, node nào nối được sẽ sáng viền.
+
+| Từ | Đến | Ý nghĩa |
+| :--- | :--- | :--- |
+| Nhập prompt | Tạo ảnh / Tạo video | Các prompt cần tạo |
+| Tải ảnh lên | Tạo ảnh / Tạo video | Ảnh tham chiếu, khung hình bắt đầu hoặc thành phần |
+| Tạo ảnh | Tạo ảnh / Tạo video | **Ảnh vừa tạo** trở thành ảnh đầu vào của node đó (node đó chạy khi ảnh đã sẵn sàng) |
+| Tạo video — cổng **khung cuối** | Tạo video | Video sau **nối tiếp từ khung hình cuối** của video trước |
+| Tạo video — cổng **khung cuối** | Tạo ảnh | **Khung hình cuối** của mỗi video trở thành ảnh đầu vào (chạy khi video đã sẵn sàng) |
+
+#### Chạy
+
+* **Chạy tất cả** (góc trên trái, hoặc `Ctrl/⌘ + Enter`) chạy cả workflow theo đúng thứ tự: node nào cần ảnh được tạo sẽ tự chạy khi ảnh đã có.
+* Nếu **Chạy tất cả** bị khoá, thanh trên cùng hiện **Vấn đề (n)**: bấm vào để xem cần sửa gì.
+* Mỗi node Tạo ảnh / Tạo video có nút **Chạy** riêng để chỉ chạy node đó. Nút bị khoá cho tới khi các node nó phụ thuộc chạy xong (rê chuột để xem lý do).
+* **Dừng** huỷ những gì đang chạy.
+* Khi đang chạy, các đường nối vào node đang tạo sẽ sáng lên và có dòng chảy, để bạn thấy workflow đang ở bước nào.
+
+> ⚠️ **Chrome tạm dừng grok.com khi tab không hiển thị** (ví dụ cửa sổ workflow che toàn màn hình). Nhấn **Bật chạy nền** (ngay dưới **Chạy tất cả** trong workflow, hoặc ở side panel), rồi chọn tab grok.com trong hộp thoại của Chrome. Việc này chia sẻ tab grok.com (không ghi lại hay gửi đi đâu) để grok.com tiếp tục tạo khi bị cửa sổ khác che. Nhãn xanh **Đang chạy nền** cho biết đã bật; nhấn ✕ để tắt.
+
+#### Kết quả
+
+Kết quả hiện ngay trong node Tạo ảnh / Tạo video. Rê chuột vào kết quả: 🔍 để xem lớn, ✕ để xoá (nút cục tẩy xoá toàn bộ kết quả của node). Video tự phát khi rê chuột. File vẫn được tải xuống như bình thường.
+
+Node phía sau dùng **kết quả đầu tiên của mỗi prompt**. Muốn chọn kết quả khác, kéo nút ở góc trên trái của một kết quả thả lên kết quả khác để đổi chỗ (ảnh và video).
+
+#### Quản lý workflow
+
+Trong **Workflow của bạn** (bên trái): **Tạo mới**, **Nhập**, và menu **⋯** của từng workflow — **Đổi tên** (hoặc bấm đúp vào tên), **Nhân bản**, **Xuất file**, **Xoá**. Mọi thay đổi được lưu tự động.
+
+* **Xuất file** tải về file `.json`. Đầu file có các dòng chú thích `//` mô tả mọi node, thuộc tính và cách nối, nên bạn có thể đưa file cho trợ lý AI và nhờ AI viết workflow mới. Các dòng `//` được bỏ đi khi nhập.
+* **Nhập** file bằng nút Nhập, hoặc đơn giản **kéo file `.json` thả vào bảng vẽ**.
+
+#### Phím tắt khi chỉnh sửa
+
+Nhấn **Phím tắt** trên thanh trên cùng (hoặc phím `?`) để xem tất cả.
+
+| Thao tác | Phím |
+| :--- | :--- |
+| Hoàn tác / Làm lại | `Ctrl/⌘ + Z` / `Ctrl/⌘ + Shift + Z` |
+| Sao chép / Cắt / Dán node (dán được sang workflow khác) | `Ctrl/⌘ + C / X / V` |
+| Nhân bản phần đang chọn | `Ctrl/⌘ + D` |
+| Chọn tất cả / Chọn thêm / Quét chọn | `Ctrl/⌘ + A` / `Ctrl/⌘ + bấm` / `Shift + kéo` |
+| Tự sắp xếp | `Shift + A` |
+| Xoá phần đang chọn | `Delete` |
+| Chạy tất cả / Chạy nền | `Ctrl/⌘ + Enter` / `Ctrl/⌘ + Shift + Enter` |
+
 ---
 
 ## ⚙️ Cấu hình Cài đặt
@@ -169,6 +251,10 @@ Truy cập tab **Cài đặt** để tùy chỉnh trải nghiệm của bạn:
 | **Tải xuống không hoạt động** | Đảm bảo tùy chọn "Hỏi nơi lưu từng tệp trước khi tải xuống" đã được **TẮT** trong Cài đặt Chrome. |
 | **Yêu cầu đăng nhập** | Hãy đảm bảo bạn đã đăng nhập vào tài khoản Grok.com của mình. |
 | **Không đủ ảnh** | Trong chế độ Khung hình thành Video, hãy đảm bảo bạn đã tải lên đủ ảnh cho số lượng prompt. |
+| **Workflow: kết quả đứng mãi ở "Đang tạo"** | Chrome đã tạm dừng tab grok.com bị che. Bật **Bật chạy nền** (hoặc **Chạy nền**), hoặc để tab grok.com hiển thị. |
+| **Workflow: nút Chạy của một node bị mờ** | Rê chuột vào nút: chạy node mà nó phụ thuộc trước, hoặc sửa vấn đề được báo (ví dụ chưa nối prompt). |
+| **Workflow: Chạy tất cả bị khoá** | Bấm **Vấn đề (n)** trên thanh trên cùng để xem cần sửa gì; bấm một vấn đề để nhảy tới node đó. |
+| **Workflow: "Không tìm thấy tab grok.com"** | Mở [grok.com](https://grok.com) trong một tab (chấm xanh trên thanh trên cùng cho biết đã kết nối). |
 
 ---
 
